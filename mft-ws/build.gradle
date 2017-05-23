@@ -1,0 +1,26 @@
+apply plugin: 'kotlin'
+apply plugin: 'com.github.johnrengelman.shadow'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+    compile "io.dropwizard:dropwizard-core:$dropwizard_version"
+    compile "io.minio:minio:3.0.4"
+}
+
+/*Shadow ("Fat JAR") plugin configuration*/
+jar {
+    manifest {
+        attributes(
+                'Main-Class': 'fr.equisign.mft.ws.MFTWebservicesApplication'
+        )
+    }
+}
+
+shadowJar {
+    mergeServiceFiles()
+}
+build.dependsOn shadowJar

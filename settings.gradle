@@ -1,0 +1,3 @@
+rootProject.name = 'mft2'
+include 'mft-ws','mft-web'
+

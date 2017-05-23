@@ -1,0 +1,17 @@
+server:
+  applicationConnectors:
+    - type: http
+      port: 8080
+  adminConnectors:
+    - type: http
+      port: 8081
+
+logging:
+  level: INFO
+  loggers:
+    fr.equisign.mft: DEBUG
+
+minio:
+  endpoint: http://172.17.0.2:9000
+  accessKey: 51NVMDQM33SR0BZPMB30
+  secretKey: mx7iCuxlcJsFuIcT0e+3+TehA4MXU7aAcWyZoAK5
